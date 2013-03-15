@@ -1,4 +1,4 @@
-# Credit Card Inspector
+# Credit Card Inspector [![Build Status](https://secure.travis-ci.org/slorek/credit_card_inspector.png)](https://secure.travis-ci.org/slorek/credit_card_inspector.png)
 
 Validate a credit card number according to the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm). Also determine the type of credit card by its number (AMEX, Discover, MaserCard and Visa).
 

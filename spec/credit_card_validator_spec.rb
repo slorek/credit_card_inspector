@@ -36,6 +36,20 @@ describe CreditCardValidator do
     end
   end
   
+  describe '.valid?' do
+    it 'correctly identifies valid card numbers' do
+      (visa_valid | [amex_valid, discover_valid, mastercard_valid]).each do |card|
+        described_class.valid?(card).should == true
+      end
+    end
+
+    it 'correctly identifies invalid card numbers' do
+      [visa_invalid, mastercard_invalid].each do |card|
+        described_class.valid?(card).should == false
+      end
+    end
+  end
+  
   describe '.sanitise_card_number' do
     it 'strips all non-numeric characters' do
       described_class.sanitise_card_number(mastercard_invalid).should == '5105105105105106'

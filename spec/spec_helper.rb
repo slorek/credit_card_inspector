@@ -1,1 +1,1 @@
-require 'credit_card_validator'
+require 'credit_card_inspector'

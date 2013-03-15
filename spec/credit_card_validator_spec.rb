@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CreditCardValidator do
+describe CreditCardInspector do
   
   let(:visa_valid) { ['4012888888881881', '4111111111111111'] }
   let(:visa_invalid) { '4111111111111' }

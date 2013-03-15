@@ -12,7 +12,7 @@ describe CreditCardValidator do
   
   describe '.card_type' do
     it 'matches VISA cards' do
-      [visa_valid, visa_invalid].each do |card|
+      (visa_valid << visa_invalid).each do |card|
         described_class.card_type(card).should == 'VISA'
       end
     end
@@ -33,6 +33,12 @@ describe CreditCardValidator do
     
     it 'returns "Unknown" when no match is found' do
       described_class.card_type(unknown_card).should == 'Unknown'
+    end
+  end
+  
+  describe '.sanitise_card_number' do
+    it 'strips all non-numeric characters' do
+      described_class.sanitise_card_number(mastercard_invalid).should == '5105105105105106'
     end
   end
 end

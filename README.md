@@ -2,7 +2,7 @@
 
 Validate a credit card number according to the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm). Also determine the type of credit card by its number (AMEX, Discover, MaserCard and Visa).
 
-Tested in Ruby 1.8.7, 1.9.2, 1.9.3 and 2.0.0.
+Tested in Ruby 1.9.2, 1.9.3 and 2.0.0.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# CreditCardValidator
+# Credit Card Validator
 
-TODO: Write a gem description
+Validate a credit card number according to the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm). Also determine the type of credit card by its number (AMEX, Discover, MaserCard and Visa).
 
 ## Installation
 
@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Validate Card number
+
+Call `CreditCardValidator.valid?(card_number)`. This will return true or false representing the card's validity.
+
+### Determine Card type
+
+Call `CreditCardValidator.card_type(card_number)`. This will return a string representing the card type. Possible return values are:
+
+- VISA
+- AMEX
+- Discover
+- MasterCard
+- Unknown
 
 ## Contributing
 

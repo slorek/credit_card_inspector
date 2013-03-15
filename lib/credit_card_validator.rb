@@ -13,6 +13,17 @@ module CreditCardValidator
     return 'Unknown'
   end
   
+  def self.valid?(card_number)
+    digits = sanitise_card_number(card_number).chars.collect(&:to_i).reverse
+    
+    total = digits.each_slice(2).map do |x, y|
+      y ||= 0
+      [x, (y * 2).divmod(10)]
+    end.flatten.inject(:+)
+    
+    total % 10 == 0
+  end
+  
   def self.sanitise_card_number(card_number)
     card_number.to_s.gsub /[^0-9]/, ''
   end
